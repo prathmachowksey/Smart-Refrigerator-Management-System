@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% block content %}
+    
+        <h1>Shopping list </h1>
+
+    <form class="form" action="" method="post" novalidate >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.x.label }}<br>
+            {{ form.x }}
+        </p>
+         
+           
+        <p>{{ form.submit() }}</p>
+      </form>
+    {% if type_=='0' %}
+	{% if rows  %}
+	<h3> Items that have been removed:</h3>
+	<table>
+		<tr>
+			<th> item </th>
+			
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+			
+		</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<h4> No items present. <h4>
+	{%endif%}        
+
+	{% elif type_=='1' %}
+	{% if rows  %}
+	<h3> Items expiring within 2 days: </h3>
+
+	<table>
+		<tr>
+			
+			<th> item</th>
+			
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+		
+		</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<h4> No items present. <h4>
+	{%endif%}
+	  {% endif %}
+   
+    
+{% endblock %}

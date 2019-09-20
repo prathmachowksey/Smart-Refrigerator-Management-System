@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+      <div class="refrigerator_settings">
+       {% if rows  %}
+	<h3> Shelves: </h3>
+	<table>
+		<tr>
+			<th> location </th>
+			<th> temperature low </th>
+			<th> temperature high </th>
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+			<td> {{ row[1]}} </td>
+			<td> {{row[2]}} </td>
+		</tr>
+		{% endfor %}
+	</table>
+     {% endif %}
+      </div>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "index.html" %}
+{% block content %}
+    
+    <form class="form" action="" method="post" novalidate >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.what_to_display.label }}<br>
+            {{ form.what_to_display }}
+        </p>
+         
+           
+        <p>{{ form.submit() }}</p>
+      </form>
+       
+	{% if table=='1' %}
+	{% if rows  %}
+	<h3> All Contents Of The Refrigerator:</h3>
+	<table>
+		<tr>
+			<th> item </th>
+			<th> category </th>
+			<th> location</th>
+			<th> quantity</th>
+			<th> expiry </th>
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+			<td> {{ row[1]}} </td>
+			<td> {{row[2]}} </td>
+			<td> {{ row[3]}} </td>
+			<td> {{row[4]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<h4> No items present. <h4>
+	{%endif%}        
+
+	{% elif table=='2' %}
+	{% if rows  %}
+	<h3> By Location:</h3>
+
+	<table>
+		<tr>
+			<th> location</th>
+			<th> item</th>
+			<th> category </th>
+			<th> quantity</th>
+			<th> expiry </th>
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+			<td> {{ row[1]}} </td>
+			<td> {{row[2]}} </td>
+			<td> {{ row[3]}} </td>
+			<td> {{row[4]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<h4> No items present. <h4>
+	{%endif%}
+
+	 {% elif table=='3' %}
+	{% if rows  %}
+	<h3> By Category:</h3>
+
+	<table>
+		<tr>
+			<th> category </th>
+			<th> item</th>
+			<th> location</th>
+			<th> quantity</th>
+			<th> expiry </th>
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+			<td> {{ row[1]}} </td>
+			<td> {{row[2]}} </td>
+			<td> {{ row[3]}} </td>
+			<td> {{row[4]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<h4> No items present. <h4>
+	{%endif%}
+
+	{% elif table=='4' %}
+	{% if rows  %}
+	<h3> By Expiry:</h3>
+
+	<table>
+		<tr>
+			<th> expiry </th>
+			<th> item</th>
+			<th> category </th>
+			<th> location</th>
+			<th> quantity</th>
+			
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td> {{row[0]}} </td>
+			<td> {{ row[1]}} </td>
+			<td> {{row[2]}} </td>
+			<td> {{row[3]}}</td>
+			<td> {{row[4]}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<h2> No items present. <h2>
+	{%endif%}
+
+          
+	{%endif%}
+	&nbsp;
+	{% endblock %}

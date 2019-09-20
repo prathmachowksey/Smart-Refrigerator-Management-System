@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Smart Refrigerator </title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css"> 
+ 
+</head>
+<body>
+          <header>
+  <h1 class="logo">Smart Refrigerator</h1>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('view_content') }}">View Contents</a></li>
+      <li><a href="{{ url_for('update') }}">Add Contents</a></li>
+      <li><a href="{{ url_for('remove') }}">Remove Contents </a></li>
+      <li><a href="{{ url_for('shopping_list') }}">Shopping List</a></li>
+      <li><a href="{{ url_for('refrigerator_settings') }}">Refrigerator Settings</a></li>
+    </ul>
+  </nav>
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+</header>
+
+<div class="content">
+
+      {% block content %}
+      <h2>  Welcome, {{user}} </h2>
+       <form class="form" action="" method="post" novalidate >
+        {{ form.hidden_tag() }}
+      
+           
+        <p class="logoutbutton">{{ form.logoutbutton() }}</p>
+      </form>
+       
+      {% endblock %}
+</div>
+
+</body>
+</html>
