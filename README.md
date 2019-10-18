@@ -8,3 +8,7 @@ A web-based Smart Refrigerator Management System that allows the user to manage 
 - **Maintain a shopping list** of items based on quantity available and the expiry date to keep the refrigerator stocked with fresh items at all items. 
 - **Maintain temperature setting** of each shelf and **a warning system** to ensure that items are placed at a suitable temperature location. 
 
+## Built With
+**Flask** - Python Web Framework
+**SQLite3** for database management
+
