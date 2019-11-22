@@ -1,4 +1,4 @@
-# Smart-Refrigerator-Management-System
+# smart-refrigerator-management-system
 A web-based Smart Refrigerator Management System that allows the user to manage the refrigerator, its settings and contents in an efficient manner. The portal enables the user to handle the refrigerator system remotely, eliminating direct human interaction. It maintains a list of items stored in it and their important details such as expiry and usage. This helps the user view the contents of the refrigerator while grocery shopping and prevents food wastage by keeping a track of the expiry date.
 
 ## Functionality Supported
